@@ -19,13 +19,24 @@ class Application extends StatelessWidget {
         body: SafeArea(
             child: Column(
           children: [
-            RightShape(),
-            RightShape(),
-            RightShape(),
-            LeftShape(),
-            LeftShape(),
-            LeftShape(),
-            LeftShape(),
+            RightShape(
+              widht: 180,
+            ),
+            RightShape(
+              widht: 190,
+            ),
+            RightShape(
+              widht: 210,
+            ),
+            LeftShape(
+              width: 200,
+            ),
+            LeftShape(
+              width: 210,
+            ),
+            LeftShape(
+              width: 220,
+            ),
           ],
         )),
       ),

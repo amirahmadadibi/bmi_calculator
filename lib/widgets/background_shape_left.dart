@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class LeftShape extends StatelessWidget {
-  const LeftShape({Key? key}) : super(key: key);
+  final double width;
+
+  const LeftShape({Key? key, this.width = 0}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +12,10 @@ class LeftShape extends StatelessWidget {
       children: [
         Container(
           height: 40,
-          width: 150.0,
+          width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(20),
-              bottomRight: Radius.circular(20),
             ),
             color: Colors.green,
           ),

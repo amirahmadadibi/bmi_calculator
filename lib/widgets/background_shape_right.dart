@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class RightShape extends StatelessWidget {
-  const RightShape({Key? key}) : super(key: key);
+  final double widht;
+
+  const RightShape({Key? key, this.widht = 0}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,10 +12,9 @@ class RightShape extends StatelessWidget {
       children: [
         Container(
           height: 40,
-          width: 150.0,
+          width: widht,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
               bottomLeft: Radius.circular(20),
             ),
             color: Colors.red,
