@@ -1,3 +1,4 @@
+import 'package:bmi_calc/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class RightShape extends StatelessWidget {
@@ -17,7 +18,7 @@ class RightShape extends StatelessWidget {
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
             ),
-            color: Colors.red,
+            color: orangeBackground,
           ),
         ),
       ],
