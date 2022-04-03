@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:bmi_calc/widgets/background_shape_left.dart';
+import 'package:bmi_calc/widgets/background_shape_right.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,22 +14,20 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Container(
-            height: 200.0,
-            width: 200.0,
-            child: Text('AmirahmadAdibi'),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20)),
-              color: Colors.red,
-            ),
-          ),
-        ),
+        body: SafeArea(
+            child: Column(
+          children: [
+            RightShape(),
+            RightShape(),
+            RightShape(),
+            LeftShape(),
+            LeftShape(),
+            LeftShape(),
+            LeftShape(),
+          ],
+        )),
       ),
     );
   }
