@@ -1,10 +1,9 @@
 import 'package:bmi_calc/constants/constants.dart';
-import 'package:bmi_calc/widgets/background_shape_left.dart';
-import 'package:bmi_calc/widgets/background_shape_right.dart';
+import 'package:bmi_calc/screens/test_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Application());
+  runApp(TapTest());
 }
 
 class Application extends StatelessWidget {
