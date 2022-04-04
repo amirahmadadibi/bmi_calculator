@@ -36,10 +36,13 @@ class _TapTestState extends State<TapTest> {
                     counter = counter + 1;
                   });
                 },
-                child: Container(
-                  width: 200,
-                  height: 200,
-                  color: Colors.red,
+                child: Padding(
+                  padding: EdgeInsets.all(40),
+                  child: Container(
+                    width: 200,
+                    height: 200,
+                    child: Text('Click'),
+                  ),
                 ),
               )
             ],
