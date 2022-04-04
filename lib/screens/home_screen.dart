@@ -11,6 +11,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final weightController = TextEditingController();
+  final heightController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   width: 130,
                   child: TextField(
+                    controller: weightController,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 30,
@@ -52,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   width: 130,
                   child: TextField(
+                    controller: heightController,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 30,
@@ -71,11 +75,16 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 40,
             ),
-            Text(
-              '! محاسبه کن',
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
+            InkWell(
+              onTap: () {
+                print(heightController.text);
+              },
+              child: Text(
+                '! محاسبه کن',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             SizedBox(
