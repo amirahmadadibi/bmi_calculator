@@ -13,6 +13,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final weightController = TextEditingController();
   final heightController = TextEditingController();
+
+  double resultBMI = 0;
+  String reslutText = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +81,19 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             InkWell(
               onTap: () {
-                print(heightController.text);
+                final weight = double.parse(weightController.text);
+                final height = double.parse(heightController.text);
+
+                setState(() {
+                  resultBMI = weight / (height * height);
+                  if (resultBMI > 25) {
+                    reslutText = 'شما اضافه وزن دارید';
+                  } else if (resultBMI >= 18.5 && resultBMI <= 25) {
+                    reslutText = 'وزن شما نرمال است';
+                  } else {
+                    reslutText = 'وزن شما کم‌تر از حد نرمال است';
+                  }
+                });
               },
               child: Text(
                 '! محاسبه کن',
@@ -91,11 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 40,
             ),
             Text(
-              '31',
+              '${resultBMI.toStringAsFixed(2)}',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 64),
             ),
             Text(
-              'شما اضافه وزن دارید',
+              '$reslutText',
               style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
